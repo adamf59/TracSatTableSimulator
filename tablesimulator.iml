@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.11" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" name="Maven: com.github.weisj:darklaf-core:2.5.5" level="project" />
+    <orderEntry type="library" name="Maven: com.github.weisj:darklaf-theme:2.5.5" level="project" />
+    <orderEntry type="library" name="Maven: com.github.weisj:darklaf-property-loader:2.5.5" level="project" />
+    <orderEntry type="library" name="Maven: com.github.weisj:darklaf-utils:2.5.5" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.github.weisj:darklaf-native-utils:2.5.5" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.github.weisj:darklaf-platform-base:2.5.5" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.github.weisj:darklaf-windows:2.5.5" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: net.java.dev.jna:jna:5.5.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.github.weisj:darklaf-macos:2.5.5" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.swinglabs:jxlayer:3.0.4" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.formdev:svgSalamander:1.1.2.3" level="project" />
+  </component>
+</module>
