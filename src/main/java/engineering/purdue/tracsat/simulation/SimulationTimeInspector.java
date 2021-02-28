@@ -74,4 +74,8 @@ public class SimulationTimeInspector {
     }
 
 
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+        currentFreq = new JLabel(coreSimulator.getSimulationThread().getSimulationDelay() + " ms");
+    }
 }

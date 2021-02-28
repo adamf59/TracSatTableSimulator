@@ -2,28 +2,30 @@ package engineering.purdue.tracsat.simulation;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.*;
+import java.awt.event.*;
 
 public class SimulationView {
 
     private CoreSimulator coreSimulator;
 
+    private JPanel simulationCanvas;
+
     private JPanel contentPanel;
     private JPanel simulationOps;
     private JButton simulationTimeButton;
     private JButton timeInspectorButton;
-    private JPanel simulationCanvas;
+    private JPanel simulationCanvasViewPort;
     private JTable stateTable;
     private JButton objectInspectorButton;
     private JButton pathModifierButton;
     private JButton graphButton;
     private JButton resetButton;
-    private JButton tempRender;
 
-    public SimulationView(final CoreSimulator coreSimulator) {
+    public SimulationView(final CoreSimulator coreSimulator, final JPanel simulationCanvas) {
 
         this.coreSimulator = coreSimulator;
+        this.simulationCanvas = simulationCanvas;
 
         simulationTimeButton.addActionListener(new ActionListener() {
             @Override
@@ -62,17 +64,7 @@ public class SimulationView {
                 SimulationObjectInspector.main(null);
             }
         });
-        tempRender.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JPanel diagram = new SimulationCanvas();
-                diagram.setVisible(true);
-                simulationCanvas.add(diagram);
-                simulationCanvas.revalidate();
 
-                System.out.println("Added Simulation Canvas");
-            }
-        });
         resetButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -81,14 +73,40 @@ public class SimulationView {
 
             }
         });
+
+
+//        simulationCanvasViewPort.addComponentListener(new ComponentAdapter() {
+//            @Override
+//            public void componentShown(ComponentEvent e) {
+//                System.out.println("testing!");
+//            }
+//        });
+
+        simulationCanvasViewPort.addHierarchyListener(new HierarchyListener() {
+
+            boolean canvasLoaded = false;
+
+            @Override
+            public void hierarchyChanged(HierarchyEvent e) {
+
+                if (!canvasLoaded) {
+                    simulationCanvasViewPort.add(simulationCanvas);
+                    simulationCanvasViewPort.revalidate();
+                    System.out.println("[SimulationView] SimulationCanvas rendered.");
+
+                    canvasLoaded = true;
+                }
+
+
+            }
+        });
     }
 
     private void createUIComponents() {
-        simulationCanvas = new JPanel();
+        simulationCanvasViewPort = new JPanel(null);
         stateTable = new JTable(new DefaultTableModel(new Object[]{"Key", "Value"}, 0));
         DefaultTableModel model = (DefaultTableModel) stateTable.getModel();
         model.addRow(new Object[]{"Simulation Time", "<waiting to start>"});
-
 
     }
 

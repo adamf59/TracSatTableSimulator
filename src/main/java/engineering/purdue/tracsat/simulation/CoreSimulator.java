@@ -7,11 +7,14 @@ public class CoreSimulator {
     private SimulationThread simulationThread;
     private SimulationView simView;
     private SimulationTimeInspector timeInspector;
+    private SimulationCanvas simulationCanvas;
 
 
     public CoreSimulator() {
         simulationThread = new SimulationThread("TestSimulation", 25, this);
-        simView = new SimulationView(this);
+        simulationCanvas = new SimulationCanvas();
+
+        simView = new SimulationView(this, simulationCanvas);
         timeInspector = new SimulationTimeInspector(this);
 
     }
@@ -50,6 +53,9 @@ public class CoreSimulator {
 
         getTimeInspector().update();
         getSimView().refreshSimulatorMonitorTable();
+
+        simulationCanvas.update();
+
 
     }
 
