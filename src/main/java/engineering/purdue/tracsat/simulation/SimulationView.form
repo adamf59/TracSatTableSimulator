@@ -12,13 +12,13 @@
       <color color="-4473925"/>
     </border>
     <children>
-      <grid id="44fb5" binding="simulationOps" layout-manager="GridLayoutManager" row-count="1" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="44fb5" binding="simulationOps" layout-manager="GridLayoutManager" row-count="1" column-count="8" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints border-constraint="South"/>
         <properties/>
         <border type="etched" title="Simulation Options"/>
         <children>
-          <component id="5278d" class="javax.swing.JButton" binding="startSimulationButton" default-binding="true">
+          <component id="5278d" class="javax.swing.JButton" binding="simulationTimeButton">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -36,7 +36,7 @@
           </component>
           <hspacer id="7f071">
             <constraints>
-              <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="7" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
           </hspacer>
           <component id="17c5f" class="javax.swing.JButton" binding="objectInspectorButton" default-binding="true">
@@ -63,12 +63,20 @@
               <text value="Graph"/>
             </properties>
           </component>
-          <component id="de742" class="javax.swing.JButton" binding="exportButton" default-binding="true">
+          <component id="de742" class="javax.swing.JButton" binding="resetButton" default-binding="true">
             <constraints>
               <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Export"/>
+              <text value="Reset"/>
+            </properties>
+          </component>
+          <component id="6aa4c" class="javax.swing.JButton" binding="tempRender">
+            <constraints>
+              <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="RDR"/>
             </properties>
           </component>
         </children>
@@ -99,7 +107,7 @@
       <grid id="d600c" binding="simulationCanvas" custom-create="true" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints border-constraint="Center"/>
         <properties/>
-        <border type="etched" title="Simulation">
+        <border type="etched" title="Simulation Canvas">
           <color color="-9142910"/>
         </border>
         <children>
